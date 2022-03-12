@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 
 import { MainContainer } from "../components/MainContainer";
 import { Navbar } from "../components/Navbar";
+import { Card } from "../components/Card";
 
 const Flex = styled.div`
   display: flex;
@@ -17,9 +18,24 @@ const Users: NextPage = () => {
           height: "70%",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "48px",
+          flexDirection: "row",
         }}
       >
+         <Flex 
+            style={{
+              height: "120%",
+              width: "30%",
+              flexDirection: "column",
+              backgroundColor: "#EF9A9A",
+              marginTop: "242px",
+              marginLeft: "40px",
+              borderRadius: "10px",
+            }}
+          >
+            <Card backgroundColor="purple-1">
+                
+            </Card>
+          </Flex>
       </Flex>
     </MainContainer>
   );

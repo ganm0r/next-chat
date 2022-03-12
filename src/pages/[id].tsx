@@ -32,7 +32,7 @@ const User: NextPage = () => {
                         width: "30%",
                         flexDirection: "column",
                         backgroundColor: "#EF9A9A",
-                        marginTop: "232px",
+                        marginTop: "242px",
                         marginLeft: "40px",
                         borderRadius: "10px",
                     }}
