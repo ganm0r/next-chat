@@ -3,7 +3,8 @@ import type { NextPage } from "next";
 
 import { MainContainer } from "../components/MainContainer";
 import { Navbar } from "../components/Navbar";
-import { Card } from "../components/Card";
+import { Input } from "../components/Input";
+import { Button } from "../components/Button";
 
 const Flex = styled.div`
   display: flex;
@@ -16,26 +17,17 @@ const Users: NextPage = () => {
       <Flex
         style={{
           height: "70%",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
-          flexDirection: "row",
+          padding: "48px",
         }}
       >
-         <Flex 
-            style={{
-              height: "120%",
-              width: "30%",
-              flexDirection: "column",
-              backgroundColor: "#EF9A9A",
-              marginTop: "242px",
-              marginLeft: "40px",
-              borderRadius: "10px",
-            }}
-          >
-            <Card backgroundColor="purple-1">
-                
-            </Card>
-          </Flex>
+        <Flex
+          style={{ height: "max-content", width: "45%", flexDirection: "column" }}
+        >
+          <Input title="Type in a cool username" />
+          <Button children="Let's go!" />
+        </Flex>
       </Flex>
     </MainContainer>
   );
