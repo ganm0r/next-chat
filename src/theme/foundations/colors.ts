@@ -10,6 +10,9 @@ const colors = {
 
   /** #EF9A9A */
   "purple-1": "#EF9A9A",
+
+  /** #E57373 */
+  "purple-2": "#E57373",
 };
 
 export default colors;
