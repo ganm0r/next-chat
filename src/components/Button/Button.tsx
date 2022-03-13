@@ -3,7 +3,7 @@ import styled from "styled-components";
 import theme from "../../theme";
 
 const StyledButton = styled.button`
-  background-color: ${theme.colors["purple-1"]};
+  background-color: ${theme.colors["purple-2"]};
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeights.extrabold};
   font-size: 18px;
@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  margin-top: 7%;
+  margin-top: 5%;
 
   &:active {
     transform: scale(0.98);
