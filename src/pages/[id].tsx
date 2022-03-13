@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import { MainContainer } from "../components/MainContainer";
 import { Navbar } from "../components/Navbar";
 import { Card } from "../components/Card";
+import { Input } from "../components/InputChat";
+import { Button } from "../components/Button";
 
 const Flex = styled.div`
   display: flex;
@@ -16,7 +18,7 @@ const Flex = styled.div`
 const SubHeading = styled.h3(
     ({ theme }) => `
       margin: 0;
-      width: 100px;
+      width: 250px;
       font-weight: ${theme.fontWeights.bold};
       color: ${theme.colors["grey-1"]};
       font-size: 22px;
@@ -38,6 +40,10 @@ const User: NextPage = () => {
             setIsSelected(!isSelected);
             return isSelected;
         }
+    }
+
+    function handleSendMessageClick() {
+
     }
 
     return (
@@ -83,7 +89,7 @@ const User: NextPage = () => {
                                     fill="#2B2B2B"
                                 />
                             </svg>
-                            <SubHeading>ACK Bot</SubHeading>
+                            <SubHeading>john doe</SubHeading>
                         </Flex>
                     </Card>
                     <hr     
@@ -95,6 +101,21 @@ const User: NextPage = () => {
                         color="#2B2B2B"
                     />
                 </Flex>
+
+                { !isSelected && <Flex
+                    style={{
+                        height: "120%",
+                        width: "64%",
+                        backgroundColor: "#FFCDD2",
+                        marginTop: "242px",
+                        marginRight: "40px",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    <SubHeading children="Please select a chat"/>
+                </Flex> }
+
                 { isSelected && <Flex 
                     style={{
                         height: "120%",
@@ -125,9 +146,28 @@ const User: NextPage = () => {
                                     fill="#2B2B2B"
                                 />
                             </svg>
-                            <SubHeading>ACK Bot</SubHeading>
+                            <SubHeading>john doe</SubHeading>
                         </Flex>
                     </Card>
+                    <Flex
+                        style={{
+                            flexDirection: "column",
+                            height: "78%"
+                        }}
+                    >
+
+                    </Flex>
+                    <Flex
+                        style={{
+                            flexDirection: "row",
+                            height: "max-content",
+                            margin: "2% 4% 2% 4%",
+                            justifyContent: "space-between",
+                        }}
+                    >
+                        <Input title="" />
+                        <Button children="send message" onClick={handleSendMessageClick}/>
+                    </Flex>
                 </Flex> }
             </Flex>
         </MainContainer>
