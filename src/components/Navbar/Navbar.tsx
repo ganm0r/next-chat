@@ -15,7 +15,7 @@ const StyledNav = styled.nav`
   p {
     margin: 0%;
     font-size: 30px;
-    font-weight: ${theme.fontWeights.black};
+    font-weight: ${theme.fontWeights.bold};
     color: ${theme.colors["grey-1"]};
   }
 
@@ -23,7 +23,7 @@ const StyledNav = styled.nav`
     font-size: 30px;
     line-height: 20px;
     text-decoration: none;
-    font-weight: ${theme.fontWeights.black};
+    font-weight: ${theme.fontWeights.bold};
     color: ${theme.colors["grey-1"]};
   }
 
@@ -67,7 +67,7 @@ const Navbar = ({ username }: NavbarProps): JSX.Element => {
               </Link>
             ))}
           </ul>
-          <StyledDiv style={{ width: "300px" }}>
+          <StyledDiv style={{ width: "250px" }}>
             { username! && <p>Hello, {username}</p> }
           </StyledDiv>
         </StyledDiv>
