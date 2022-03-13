@@ -2,6 +2,8 @@
 
 A simple chat app to demonstrate web front-end designing, Next.js dynamic routing and React hooks, state management familiarity.
 
+![NextChat](https://raw.githubusercontent.com/ganm0r/next-chat/main/test-next-chat.gif?token=GHSAT0AAAAAABR7RB4VFMO7NSDEDKMSILLOYRXK3CA)
+
 # :running_man: Running locally
 
 In the project directory, you can run:
