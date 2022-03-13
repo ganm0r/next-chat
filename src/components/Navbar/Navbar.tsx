@@ -67,7 +67,7 @@ const Navbar = ({ username }: NavbarProps): JSX.Element => {
               </Link>
             ))}
           </ul>
-          <StyledDiv style={{ width: "250px" }}>
+          <StyledDiv style={{ width: "325px" }}>
             { username! && <p>Hello, {username}</p> }
           </StyledDiv>
         </StyledDiv>
