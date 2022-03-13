@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { MainContainer } from "../components/MainContainer";
 import { Navbar } from "../components/Navbar";
 import { Card } from "../components/Card";
+import { Card as ChatCard } from "../components/ChatCard";
 import { Input } from "../components/InputChat";
 import { Button } from "../components/Button";
 
@@ -27,11 +28,25 @@ const SubHeading = styled.h3(
     `
   );
 
+const ChatContent = styled.h4(
+({ theme }) => `
+    margin: 0;
+    width: max-content;
+    font-weight: ${theme.fontWeights.semibold};
+    color: ${theme.colors["grey-0"]};
+    font-size: 20px;
+    line-height: 25px;
+    padding: 4px;
+`
+);
+
 const User: NextPage = () => {
     const router = useRouter();
     const { id } = router.query;
 
     const [isSelected, setIsSelected] = useState(false);
+    const [currentMessage, setCurrentMessage] = useState('');
+    const [messages, setMessages] = useState(['']);
 
     function handleChatCardClick() {
         if(isSelected) {
@@ -40,10 +55,6 @@ const User: NextPage = () => {
             setIsSelected(!isSelected);
             return isSelected;
         }
-    }
-
-    function handleSendMessageClick() {
-
     }
 
     return (
@@ -152,21 +163,28 @@ const User: NextPage = () => {
                     <Flex
                         style={{
                             flexDirection: "column",
-                            height: "78%"
+                            height: "70%",
+                            margin: "2% 4% 0% 4%",
+                            justifyContent: "flex-end",
+                            alignSelf: "right"
                         }}
                     >
-
+                        {messages.map((message) => (
+                            message && <ChatCard backgroundColor="grey-1">
+                                <ChatContent>{message}</ChatContent>
+                            </ChatCard>
+                        ))}
                     </Flex>
                     <Flex
                         style={{
                             flexDirection: "row",
                             height: "max-content",
-                            margin: "2% 4% 2% 4%",
+                            margin: "0% 4% 2% 4%",
                             justifyContent: "space-between",
                         }}
                     >
-                        <Input title="" />
-                        <Button children="send message" onClick={handleSendMessageClick}/>
+                        <Input title="say something nice" onChange={ (event) => setCurrentMessage(event.target.value) } />
+                        <Button children="send message" onClick={ () => setMessages([...messages, currentMessage]) } />
                     </Flex>
                 </Flex> }
             </Flex>
