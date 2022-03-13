@@ -16,7 +16,6 @@ const StyledCard = styled.div<StyledCardProps>(
     border-radius: 8px;
     box-sizing: border-box;
     padding: 22px;
-    margin-bottom: 16px;
 
     & > *:not(:last-child) {
       ${spacing
