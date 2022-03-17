@@ -39,6 +39,7 @@ const StyledInputField = styled.input(
 
 interface InputProps {
   title: string;
+  value: string;
   type?: React.HTMLInputTypeAttribute;
   placeholder?: string;
   info?: string;
@@ -48,6 +49,7 @@ interface InputProps {
 
 const Input = ({
   title,
+  value,
   type,
   placeholder,
   required,
@@ -58,6 +60,7 @@ const Input = ({
       <StyledInputTitle>{title}</StyledInputTitle>
       <StyledInputField
         type={type}
+        value={value}
         placeholder={placeholder}
         spellCheck={false}
         autoComplete="off"
