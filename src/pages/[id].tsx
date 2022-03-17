@@ -47,7 +47,7 @@ const User: NextPage = () => {
     const [isSelected, setIsSelected] = useState(false);
     const [currentMessage, setCurrentMessage] = useState('');
     const [messages, setMessages] = useState(['']);
-
+    
     function handleChatCardClick() {
         if(isSelected) {
             return;
@@ -183,8 +183,8 @@ const User: NextPage = () => {
                             justifyContent: "space-between",
                         }}
                     >
-                        <Input title="say something nice" onChange={ (event) => setCurrentMessage(event.target.value) } />
-                        <Button children="send message" onClick={ () => setMessages([...messages, currentMessage]) } />
+                        <Input title="say something nice" value={currentMessage} onChange={ (event) => setCurrentMessage(event.target.value) } />
+                        <Button children="send message" onClick={ () => {setMessages([...messages, currentMessage]); setCurrentMessage('')} } />
                     </Flex>
                 </Flex> }
             </Flex>
